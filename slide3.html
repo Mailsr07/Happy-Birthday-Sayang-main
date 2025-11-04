@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abang bikin marah ya!? 😤💢</title>
+    <style>
+      /* 🌈 Background lucu + emoji terbang */
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background: linear-gradient(135deg, #ffafcc, #ffd6a5, #ffc8dd);
+        font-family: "Poppins", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+      }
+
+      /* 💢 Emoji love & marah terbang */
+      .emoji {
+        position: absolute;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 24px;
+        animation: floatUp linear infinite;
+        z-index: 1;
+      }
+
+      @keyframes floatUp {
+        0% {
+          transform: translateY(100vh) scale(0.8);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-10vh) scale(1.2);
+          opacity: 0;
+        }
+      }
+
+      /* 📦 Kotak utama */
+      .container {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.5);
+        padding: 40px;
+        border-radius: 25px;
+        box-shadow: 0 0 25px rgba(255, 105, 97, 0.5);
+        backdrop-filter: blur(8px);
+        width: 90%;
+        max-width: 500px;
+        animation: bounceIn 1.2s ease;
+      }
+
+      /* 🖼️ Gambar lucu */
+      .image-box img {
+        width: 100%;
+        max-width: 300px;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(255, 182, 193, 0.8);
+        animation: shake 2s infinite ease-in-out;
+      }
+
+      @keyframes shake {
+        0%, 100% { transform: rotate(0deg); }
+        25% { transform: rotate(2deg); }
+        50% { transform: rotate(-2deg); }
+        75% { transform: rotate(1deg); }
+      }
+
+      /* 💬 Pesan marah lucu */
+      .pesan {
+        margin-top: 25px;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #ff4b4b;
+        line-height: 1.6;
+        text-shadow: 0 0 10px rgba(255, 105, 97, 0.6);
+        animation: popIn 1.5s ease;
+      }
+
+      @keyframes popIn {
+        from { opacity: 0; transform: scale(0.8); }
+        to { opacity: 1; transform: scale(1); }
+      }
+
+      /* 🔘 Tombol kocak */
+      .next-button {
+        display: inline-block;
+        margin-top: 25px;
+        background-color: #ff6f61;
+        color: white;
+        padding: 12px 35px;
+        border-radius: 40px;
+        text-decoration: none;
+        font-weight: 700;
+        box-shadow: 0 0 20px rgba(255, 105, 97, 0.7);
+        transition: all 0.3s ease;
+      }
+
+      .next-button:hover {
+        background-color: #ff4b4b;
+        transform: scale(1.1) rotate(-2deg);
+        box-shadow: 0 0 30px rgba(255, 105, 97, 1);
+      }
+
+      /* ✨ Animasi masuk */
+      @keyframes bounceIn {
+        0% { transform: scale(0.8); opacity: 0; }
+        60% { transform: scale(1.05); opacity: 1; }
+        100% { transform: scale(1); }
+      }
+
+      /* 📱 Responsif */
+      @media (max-width: 600px) {
+        .pesan {
+          font-size: 1.1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 💢 Emoji terbang -->
+    <script>
+      const emojiList = ["😤", "💢", "😡", "😠", "💖", "❤️", "💕"];
+      for (let i = 0; i < 25; i++) {
+        const e = document.createElement("div");
+        e.classList.add("emoji");
+        e.textContent = emojiList[Math.floor(Math.random() * emojiList.length)];
+        e.style.left = Math.random() * 100 + "vw";
+        e.style.animationDuration = 5 + Math.random() * 5 + "s";
+        e.style.fontSize = 20 + Math.random() * 25 + "px";
+        document.body.appendChild(e);
+        setTimeout(() => e.remove(), 10000);
+      }
+      setInterval(() => {
+        const e = document.createElement("div");
+        e.classList.add("emoji");
+        e.textContent = emojiList[Math.floor(Math.random() * emojiList.length)];
+        e.style.left = Math.random() * 100 + "vw";
+        e.style.animationDuration = 5 + Math.random() * 5 + "s";
+        e.style.fontSize = 20 + Math.random() * 25 + "px";
+        document.body.appendChild(e);
+        setTimeout(() => e.remove(), 10000);
+      }, 400);
+    </script>
+
+    <!-- 😂 Konten utama -->
+    <div class="container">
+      <div class="image-box">
+        <img src="img/Mara.jpg" alt="Foto Marah Lucu" />
+      </div>
+      <p class="pesan">
+        Hah!? 😤 Kenapa sih kamu pencet ke sini?!  
+        Abang bikin marah ya!? GRRR 😡  
+        Tapi yaudah deh... 😤  
+        Abang tetep sayang kok 💕 hehe~
+      </p>
+      <a href="slide2.html" class="next-button">Balik sana cepet 😝</a>
+    </div>
+  </body>
+</html>

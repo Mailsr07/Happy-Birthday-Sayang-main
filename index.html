@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selamat Ulang Tahun sayang🥳🥳🥳</title>
+    <style>
+      /* 🌈 Gaya dasar halaman */
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        overflow: hidden;
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #a2d2ff, #bde0fe);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+
+      /* 🌸 Kontainer utama */
+      .container {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.7);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 0 25px rgba(0, 191, 255, 0.3);
+        backdrop-filter: blur(8px);
+        z-index: 2;
+        width: 90%;
+        max-width: 600px;
+      }
+
+      .image-box img {
+        width: 80%;
+        max-width: 400px;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+
+      .image-box p {
+        font-size: 1.2rem;
+        color: #000;
+        line-height: 1.7;
+        font-weight: 500;
+      }
+
+      .next-button {
+        display: inline-block;
+        margin-top: 25px;
+        background-color: #0096ff;
+        color: white;
+        padding: 12px 30px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        box-shadow: 0 0 15px rgba(0, 191, 255, 0.7);
+        transition: all 0.3s ease;
+      }
+
+      .next-button:hover {
+        background-color: #007acc;
+        transform: scale(1.05);
+        box-shadow: 0 0 25px rgba(0, 191, 255, 1);
+      }
+
+      /* 💕 Animasi love yang naik ke atas */
+      .love {
+        position: absolute;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 24px;
+        animation: floatUp linear infinite;
+        z-index: 1;
+      }
+
+      @keyframes floatUp {
+        0% {
+          transform: translateY(100vh) scale(0.8);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-10vh) scale(1.3);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 💙 Konten utama -->
+    <div class="container">
+      <div class="image-box">
+        <img src="img/Foryou.jpg" alt="Ucapan ulang tahun" />
+        <p>
+          Assalaamu'alaikum sayang 💕<br />
+          Abang bikin sesuatu buat kamu, semoga suka yaa 💙
+        </p>
+      </div>
+      <a href="slide2.html" class="next-button">Next ➜</a>
+    </div>
+
+    <!-- 💞 Elemen love yang melayang -->
+    <script>
+      // Buat love-love naik secara acak
+      const numHearts = 25;
+      for (let i = 0; i < numHearts; i++) {
+        const heart = document.createElement("div");
+        heart.classList.add("love");
+        heart.textContent = ["💙", "💖", "💜", "💗"][Math.floor(Math.random() * 4)];
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = 5 + Math.random() * 5 + "s";
+        heart.style.fontSize = 20 + Math.random() * 20 + "px";
+        document.body.appendChild(heart);
+
+        // Hapus love setelah animasi selesai
+        setTimeout(() => heart.remove(), 10000);
+      }
+
+      // Ulangi terus biar love-nya gak berhenti
+      setInterval(() => {
+        const heart = document.createElement("div");
+        heart.classList.add("love");
+        heart.textContent = ["💙", "💖", "💜", "💗"][Math.floor(Math.random() * 4)];
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = 5 + Math.random() * 5 + "s";
+        heart.style.fontSize = 20 + Math.random() * 20 + "px";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 10000);
+      }, 400);
+    </script>
+  </body>
+</html>
